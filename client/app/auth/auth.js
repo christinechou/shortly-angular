@@ -8,6 +8,7 @@ angular.module('shortly.auth', [])
 
   // the sign in and sign up methods are in services.js
   $scope.signin = function () {
+    console.log('the user is ', $scope.user);
     Auth.signin($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);

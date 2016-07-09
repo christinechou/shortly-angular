@@ -1,4 +1,4 @@
-<div id='container' ng-controller="LinksController" >
+<div id='container' ng-controller="LinksController" ng-init="Links.getAll()">
 
  <div class='navigation'>
       <ul>
@@ -8,6 +8,15 @@
   </div>
 
   <h1>All links</h1>
-    <li ng-repeat="link in Links">
-    {{ Link }}
+
+  <form class='form-inline'>
+    <input ng-model='query' type='text'
+      placeholder='Filter by' autofocus>
+  </form>
+  <div class = 'link' ng-repeat="link in data.links | filter:query | orderBy:'-visits'"> 
+  	<div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+  	<div class='title'>{{link.title}}</div>
+  	<a href='{{link.baseUrl}}/{{link.code}}'>{{link.url}}</a>
+	</div>
+
 </div>
