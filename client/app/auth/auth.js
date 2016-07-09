@@ -6,6 +6,7 @@ angular.module('shortly.auth', [])
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
 
+  // the sign in and sign up methods are in services.js
   $scope.signin = function () {
     Auth.signin($scope.user)
       .then(function (token) {

@@ -21,7 +21,7 @@ describe('LinksController', function () {
         $scope: $scope,
         Links: Links
       });
-    };
+    }; 
 
   }));
 
